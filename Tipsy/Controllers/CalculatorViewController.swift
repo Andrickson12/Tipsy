@@ -49,7 +49,7 @@ class CalculatorViewController: UIViewController {
     
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
         splitNumberLabel.text = String(format: "%.0f", sender.value)
-        splitNumberLabel.text = String(Int(sender.value))
+        numberOfPeople = Int(sender.value)
         
     }
     
@@ -58,6 +58,7 @@ class CalculatorViewController: UIViewController {
         //Get the text the user typed in the billTextField
         let bill = billTextField.text!
         
+        //If the text is not an empty String ""
         if bill != "" {
             
             //Turn the bill from a String e.g. "123.50" to an actual String with decimal places.
@@ -71,8 +72,6 @@ class CalculatorViewController: UIViewController {
             let resultTo2DecimalPlaces = String(format: "%.2f", result)
             
             print(resultTo2DecimalPlaces)
-            
-            warningLabel.text = resultTo2DecimalPlaces
         }
         
     }
